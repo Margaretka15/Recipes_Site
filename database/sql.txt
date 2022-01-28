@@ -1,0 +1,40 @@
+CREATE TABLE Licznik (
+	Id INT AUTO_INCREMENT,
+    	Number INT,
+    	PRIMARY KEY (Id)
+);
+INSERT INTO Licznik(Number) VALUES (0); 
+
+CREATE TABLE Recipes(
+   	Id INT AUTO_INCREMENT,
+  	Title VARCHAR(50),
+    	Text TEXT,
+	Date VARCHAR(15),
+	AddedBy INT,
+	AuthorName VARCHAR(50),
+	ImageSrc VARCHAR(255),
+	PRIMARY KEY(ID)) CHARSET=utf8 COLLATE utf8_polish_ci;
+
+insert into recipes (Title, Text) VALUES
+
+('Sałatka z ananasem', 'Pokroić ananasa, dodać usmażonego kurczaka i wymieszać. Doprawić do smaku'),
+('Jajko z awokado', 'Ugotuj jajko i dodaj awokado. Smacznego!');
+
+CREATE TABLE Comments (
+   Id INT AUTO_INCREMENT,
+   RecipeId INT,
+   PRIMARY KEY (Id),
+   Text TEXT,
+   Author VARCHAR(50),
+   Date VARCHAR(15))
+   CHARSET=utf8 COLLATE utf8_polish_ci;
+
+CREATE TABLE Users (
+   Id INT AUTO_INCREMENT,
+   Name VARCHAR(50),
+   Pass VARCHAR(50),
+   Access INT,
+   PRIMARY KEY(Id)
+   );
+
+INSERT INTO Users (Name, Pass, Access) VALUES ('Pysia21', '1234', 1), ('Zosia2', '1234', 2);
